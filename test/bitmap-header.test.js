@@ -11,6 +11,8 @@ describe('bitmap header', () => {
     });
 
     it('has correct specs', () => {
+        // const constants = new constants();
+        console.log("this the constant", constants);
         // TODO: read the docs to figure out what these values should be
         assert.ok(constants.PIXEL_OFFSET);
         assert.ok(constants.BITS_PER_PIXEL_OFFSET);
