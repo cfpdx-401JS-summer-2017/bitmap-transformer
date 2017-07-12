@@ -3,12 +3,12 @@ const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 
-xdescribe('bitmap file transformer', () => {
+describe('bitmap file transformer', () => {
     
     let buffer = null;
     before(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
-
+        buffer = fs.readFileSync('./tests/test-bitmap.bmp');
         // TODO: the functionality in this before is same as 
         // other test, can you remove (extract) the duplication?
     });
