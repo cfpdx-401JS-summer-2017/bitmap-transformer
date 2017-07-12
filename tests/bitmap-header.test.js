@@ -8,7 +8,7 @@ describe.only('bitmap header', () => {
     let buffer = null;
     before(() => {
         // DONE: read './test/test-bitmap.bmp' into buffer variable
-        const testBitmap = Buffer.from('./test/test-bitmap');
+        const buffer = Buffer.from('./test/test-bitmap');
     });
 
     it('has correct specs', () => {
@@ -18,7 +18,7 @@ describe.only('bitmap header', () => {
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it.skip('parses header data', () => {
+    it('parses header data', () => {
         // TODO: use the constants to populate the following properties
         // on the BitmapHeader in its constructor
         const header = new BitmapHeader(buffer);
