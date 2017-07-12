@@ -1,14 +1,16 @@
 const assert = require('assert');
+const fs = require('fs');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
 
     let buffer = null;
-    before(() => {
+    beforeEach(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
+        const buf = fs.readFileSync('test-bitmap');
+        console.log(buf);
     });
-
     it('has correct specs', () => {
         // TODO: read the docs to figure out what these values should be
         assert.ok(constants.PIXEL_OFFSET);
