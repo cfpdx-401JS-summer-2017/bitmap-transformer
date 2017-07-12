@@ -7,6 +7,7 @@ describe('bitmap header', () => {
     let buffer = null;
     before(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
+        buffer = new Buffer('./test-bitmap.bmp');
     });
 
     it('has correct specs', () => {
