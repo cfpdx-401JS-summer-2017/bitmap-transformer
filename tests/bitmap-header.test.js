@@ -9,7 +9,7 @@ const BitmapHeader = require('../lib/bitmap-header');
 //     this.fileSize = buffer.readUInt32LE(constants.FILE_SIZE_OFFSET, 4);
 // }
 
-describe.only('bitmap header', () => {
+describe('bitmap header', () => {
 
     let buffer = null;
     before(() => {

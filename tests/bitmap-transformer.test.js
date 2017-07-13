@@ -7,10 +7,11 @@ describe.skip('bitmap file transformer', () => {
     
     let buffer = null;
     before(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
+        // DONE: read './test/test-bitmap.bmp' into buffer variable
 
-        // TODO: the functionality in this before is same as 
+        // DONE: the functionality in this before is same as 
         // other test, can you remove (extract) the duplication?
+        buffer = getBitmap();
     });
 
     // "pinning" test, or "snapshot" test
