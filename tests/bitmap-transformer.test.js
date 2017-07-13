@@ -17,11 +17,14 @@ describe('bitmap file transformer', () => {
     it('test whole transform', () => {
         const bitmap = new BitmapTransformer(buffer);
 
-        bitmap.transform(invert);
+        // bitmap.transform(invert);
+        // const inverted = bitmap.buffer;
+        // console.log(inverted);
+
         bitmap.transform(grayscale);
-
-        // console.log('4: ',bitmap);
-
+        console.log('bg: ', grayscale);
+        const grayscaled = bitmap.buffer;
+        console.log('g: ',grayscaled);
 
         // after above step, the buffer has been modified
         // and is accessible via bitmap.buffer
