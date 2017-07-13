@@ -1,5 +1,5 @@
 const assert = require('assert');
-const fs = require('fs');
+const newBuffer = require('../lib/new-buffer');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
 
@@ -8,7 +8,7 @@ describe('bitmap header', () => {
     let buffer = null;
     before(() => {
         // DONE: read './test/test-bitmap.bmp' into buffer variable
-        buffer = new Buffer(fs.readFileSync('./test/test-bitmap.bmp'));
+        buffer = newBuffer('./test/test-bitmap.bmp');
     });
 
     it('has correct specs', () => {

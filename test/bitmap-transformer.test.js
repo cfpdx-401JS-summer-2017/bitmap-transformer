@@ -1,5 +1,5 @@
 const assert = require('assert');
-const fs = require('fs');
+const newBuffer = require('../lib/new-buffer');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 
@@ -7,10 +7,10 @@ describe('bitmap file transformer', () => {
     
     let buffer = null;
     before(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
-        buffer = new Buffer(fs.readFileSync('./test/test-bitmap.bmp'));
-        // TODO: the functionality in this before is same as 
+        // DONE: read './test/test-bitmap.bmp' into buffer variable
+        // DONE: the functionality in this before is same as 
         // other test, can you remove (extract) the duplication?
+        buffer = newBuffer('./test/test-bitmap.bmp');
     });
 
     // "pinning" test, or "snapshot" test
@@ -28,8 +28,8 @@ describe('bitmap file transformer', () => {
 
         // read the output file we saved earlier as
         // the "standard" expected output file
-        buffer = fs.readFileSync('./test/inverted-expected.bmp');
-        assert.deepEqual(bitmap.buffer, buffer);
+        const testBuffer = fs.readFileSync('./test/inverted-expected.bmp');
+        assert.deepEqual(bitmap.buffer, testBuffer);
 
         // if you don't have a standard file yet, you could write it 
         // out by commenting above code, using code below and visually inspect
