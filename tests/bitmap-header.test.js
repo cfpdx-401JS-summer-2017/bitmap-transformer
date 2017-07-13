@@ -4,13 +4,12 @@ const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
-
     let buffer = null;
-    beforeEach(() => {
+    before(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
-        const buf = fs.readFileSync('test-bitmap');
-        console.log(buf);
-    });
+          buffer = fs.readFileSync('./tests/test-bitmap.bmp');
+        });
+
     it('has correct specs', () => {
         // TODO: read the docs to figure out what these values should be
         assert.ok(constants.PIXEL_OFFSET);
@@ -22,6 +21,8 @@ describe('bitmap header', () => {
         // TODO: use the constants to populate the following properties
         // on the BitmapHeader in its constructor
         const header = new BitmapHeader(buffer);
+        const path = './tests/test-bitmap.bmp';
+        header.findBitmapValues(buffer);
         assert.equal(header.pixelOffset, 54);
         assert.equal(header.bitsPerPixel, 24);
         assert.equal(header.fileSize, 30054);

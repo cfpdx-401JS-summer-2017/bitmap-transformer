@@ -2,7 +2,7 @@
   "name": "bitmap-transformer",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/bitmap-transformer",
+  "main": "lib/bitmap-header.js",
   "directories": {
     "test": "tests"
   },
