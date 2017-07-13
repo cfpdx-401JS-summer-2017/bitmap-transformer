@@ -1,8 +1,8 @@
 const assert = require('assert');
 const BitmapHeader = require('../lib/bitmap-header');
 const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transformer');
-const grayscale = require('../lib/grayscale-transformer');
+const InvertTransformer = require('../lib/invert-transformer');
+const GrayscaleTransformer = require('../lib/grayscale-transformer');
 
 describe('transformers', () => {
   let buffer = null;
@@ -31,7 +31,7 @@ describe('transformers', () => {
     it('grayscale', () => {
         // HINT: grayscale assigns the average of all three colors
         // as the new value for each color
-        const gray = new BitmapTransformer(buffer);
+        const gray = new GrayscaleTransformer(buffer);
         const transformed = gray.change(grayscale)({
             r: 34,
             g: 100,
