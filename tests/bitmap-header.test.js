@@ -8,6 +8,7 @@ describe('bitmap header', () => {
     before(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
           buffer = fs.readFileSync('./tests/test-bitmap.bmp');
+          console.log(buffer);
         });
     it('has correct specs', () => {
         // TODO: read the docs to figure out what these values should be
