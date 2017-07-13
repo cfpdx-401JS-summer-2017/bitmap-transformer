@@ -8,7 +8,7 @@ describe('bitmap file transformer', () => {
     let buffer = null;
     before(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
-
+        buffer = new Buffer(fs.readFileSync('./test/test-bitmap.bmp'));
         // TODO: the functionality in this before is same as 
         // other test, can you remove (extract) the duplication?
     });
@@ -28,7 +28,7 @@ describe('bitmap file transformer', () => {
 
         // read the output file we saved earlier as
         // the "standard" expected output file
-        const buffer = fs.readFileSync('./test/inverted-expected.bmp');
+        buffer = fs.readFileSync('./test/inverted-expected.bmp');
         assert.deepEqual(bitmap.buffer, buffer);
 
         // if you don't have a standard file yet, you could write it 
