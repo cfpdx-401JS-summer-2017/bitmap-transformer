@@ -1,7 +1,6 @@
 const assert = require('assert');
-const InvertTransformer = require('../lib/invert-transformer');
-const GrayscaleTransformer = require('../lib/grayscale-transformer');
-// const BitmapTransformer = require('../lib/bitmap-transformer');
+const invert = require('../lib/invert-transformer');
+const grayscale = require('../lib/grayscale-transformer');
 const bitmapUtilities = require('../tests/bitmapUtilities');
 
 // each pixel is made up of 3 bytes: b, g, r
@@ -15,7 +14,7 @@ describe('transformers', () => {
     // HINT: invert subtracts each value from 255
     const inv = new InvertTransformer(buffer);
     // inv.transform();
-    // const transformed = 
+    // const transformed =
     inv.transform()({
       r: 34,
       g: 100,

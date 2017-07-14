@@ -2,6 +2,8 @@ const fs = require('fs');
 const assert = require('assert');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const bitmapUtilities = require('../tests/bitmapUtilities');
+const invert = require('../lib/invert-transformer');
+const grayscale = require('../lib/grayscale-transformer');
 
 // 8 bits in a byte
 describe('bitmap file transformer', () => {
@@ -12,16 +14,13 @@ describe('bitmap file transformer', () => {
     });
     // "pinning" test, or "snapshot" test
     it('test whole transform', () => {
-      const type = 'invert';
       const bitmap = new BitmapTransformer(buffer);
-      bitmap.sendType(type);
-        // const inverted = bitmap.buffer;
-        // // console.log('inverted: ',inverted);
-        //
-        // bitmap.change(grayscale);
-        // const grayscaled = bitmap.buffer;
-        // console.log('grayscaled: ',grayscaled);
-
+      // const grayscale = new GrayscaleTransformer(buffer);
+      console.log(grayscale);
+      bitmap.changeColor(grayscale.transform());
+      const grayscaled = bitmap.buffer;
+      console.log('grayscaled: ',grayscaled);
+//
         // after above step, the buffer has been modified
         // and is accessible via bitmap.buffer
 
