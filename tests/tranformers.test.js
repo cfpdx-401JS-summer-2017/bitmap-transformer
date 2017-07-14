@@ -14,7 +14,7 @@ describe('transformers', () => {
   it('invert', () => {
     // HINT: invert subtracts each value from 255
     const inv = new InvertTransformer(buffer);
-    console.log('inv: ',inv.transform());
+    inv.transform();
     // const transformed = inv.transform()({
     //   r: 34,
     //   g: 100,
@@ -31,7 +31,6 @@ describe('transformers', () => {
     // HINT: grayscale assigns the average of all three colors
     // as the new value for each color
     const gray = new GrayscaleTransformer(buffer);
-    console.log('gray: ',gray.transform());
     gray.transform();
     // const transformed = gray.transform(type)({
     //   r: 34,
