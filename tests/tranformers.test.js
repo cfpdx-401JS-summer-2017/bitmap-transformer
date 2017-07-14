@@ -14,18 +14,19 @@ describe('transformers', () => {
   it('invert', () => {
     // HINT: invert subtracts each value from 255
     const inv = new InvertTransformer(buffer);
-    inv.transform();
-    // const transformed = inv.transform()({
-    //   r: 34,
-    //   g: 100,
-    //   b: 205
-    // });
-    //
-    // assert.deepEqual(transformed, {
-    //   r: 221,
-    //   g: 155,
-    //   b: 50
-    // });
+    // inv.transform();
+    // const transformed = 
+    inv.transform()({
+      r: 34,
+      g: 100,
+      b: 205
+    });
+
+    assert.deepEqual(transformed, {
+      r: 221,
+      g: 155,
+      b: 50
+    });
   });
   it('grayscale', () => {
     // HINT: grayscale assigns the average of all three colors
