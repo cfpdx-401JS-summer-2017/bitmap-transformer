@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/cfpdx-401JS-summer-2017/bitmap-transformer#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-mocha": "^4.3.1",
-    "gulp-nodemon": "^2.2.1",
+    "diff-buf": "^1.0.1",
     "mocha": "^3.4.2"
   }
 }
