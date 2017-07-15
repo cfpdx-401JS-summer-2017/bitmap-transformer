@@ -1,9 +1,9 @@
 const fs = require('fs');
 const assert = require('assert');
+const invTransformer = require('../lib/invert-transformer');
+const gsTransformer = require('../lib/grayscale-transformer');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const bitmapUtilities = require('../tests/bitmapUtilities');
-const invert = require('../lib/invert-transformer');
-const grayscale = require('../lib/grayscale-transformer');
 
 // 8 bits in a byte
 describe('bitmap file transformer', () => {
@@ -15,12 +15,13 @@ describe('bitmap file transformer', () => {
     // "pinning" test, or "snapshot" test
     it('test whole transform', () => {
       const bitmap = new BitmapTransformer(buffer);
-      // const grayscale = new GrayscaleTransformer(buffer);
-      console.log(grayscale);
-      bitmap.changeColor(grayscale.transform());
-      const grayscaled = bitmap.buffer;
-      console.log('grayscaled: ',grayscaled);
-//
+
+      // const grayscale = grayscaleTransformer.transform;
+      bitmap.changeColor(invTransformer);
+
+      // console.log('grayscaled: ',grayscaled);
+      // const testBuffer = fs.readFileSync('./tests/my-inverted-expected.bmp');
+
         // after above step, the buffer has been modified
         // and is accessible via bitmap.buffer
 
@@ -32,6 +33,6 @@ describe('bitmap file transformer', () => {
         // if you don't have a standard file yet, you could write it
         // out by commenting above code, using code below and visually inspect
         // the file for correctness.
-        // return fs.writeFileSync('./test/inverted-expected.bmp', bitmap.buffer);
+        return fs.writeFileSync('./tests/test-inverted-expected.bmp', bitmap.buffer);
     });
 });
