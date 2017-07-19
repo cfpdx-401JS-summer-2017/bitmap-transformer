@@ -1,0 +1,27 @@
+{
+  "name": "bitmap-transformer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anwarmontasir/bitmap-transformer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anwarmontasir/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/anwarmontasir/bitmap-transformer#readme",
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {},
+  "description": ""
+}
