@@ -1,0 +1,27 @@
+{
+  "name": "bitmap-transformer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests",
+    "start": "npm test -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfpdx-401JS-summer-2017/bitmap-transformer.git"
+  },
+  "author": "Wendy Beck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cfpdx-401JS-summer-2017/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/cfpdx-401JS-summer-2017/bitmap-transformer#readme",
+  "devDependencies": {
+    "diff-buf": "^1.0.1",
+    "mocha": "^3.4.2"
+  }
+}
