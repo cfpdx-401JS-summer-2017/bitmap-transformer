@@ -2,7 +2,7 @@ const assert = require('assert');
 const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
-const getBitmap = require('./before-tests')
+const getBitmap = require('./before-tests');
 describe('bitmap file transformer', () => {
     
     let buffer = null;
@@ -29,7 +29,7 @@ describe('bitmap file transformer', () => {
 
         // read the output file we saved earlier as
         // the "standard" expected output file
-        const testBuffer = fs.readFileSync('./test/inverted-expected.bmp');
+        const testBuffer = fs.readFileSync('./tests/inverted-expected.bmp');
         assert.deepEqual(bitmap.buffer, testBuffer);
 
         // if you don't have a standard file yet, you could write it 
