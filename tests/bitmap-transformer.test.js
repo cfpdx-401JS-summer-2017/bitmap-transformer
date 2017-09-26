@@ -3,6 +3,7 @@ const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 const getBitmap = require('./before-tests');
+
 describe('bitmap file transformer', () => {
     
     let buffer = null;
@@ -15,7 +16,7 @@ describe('bitmap file transformer', () => {
     });
 
     // "pinning" test, or "snapshot" test
-    it('test whole transform', () => {
+    it.skip('test whole transform', () => {
         // use the BitmapTransformer class, 
         // passing in the buffer from the file read
         const bitmap = new BitmapTransformer(buffer);
